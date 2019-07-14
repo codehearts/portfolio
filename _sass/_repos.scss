@@ -1,0 +1,22 @@
+.repos {
+  display: grid;
+  grid-template-columns: $grid_columns;
+  grid-column-gap: $grid_margin;
+  grid-auto-rows: min-content;
+
+  // Heading spans all three columns
+  & > h1 {
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+  }
+
+  // Each repo spans one column
+  & > article {
+    grid-row: 2 / span 1;
+
+    & > h1,
+    & > h2 {
+      margin-top: 0;
+    }
+  }
+}
