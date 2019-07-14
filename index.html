@@ -1,0 +1,24 @@
+---
+title: "codehearts is catherine hart"
+layout: codehearts
+---
+
+<article class="bio">
+  {% for bio in site.bios %}
+    <h1>{{ bio.name }}</h1>
+
+    <figure>
+      <img src="{{ bio.image }}" alt="{{ bio.image_alt }}">
+    </figure>
+
+    {{ bio.content }}
+
+    <nav>
+      <ul>
+        {% for link in bio.links %}
+        <li><a href="{{ link.link }}" class="button">{{ link.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  {% endfor %}
+</article>
