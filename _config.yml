@@ -3,3 +3,5 @@ collections:
   - bios
   - repos
   - works
+sass:
+  style: compressed

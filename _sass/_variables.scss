@@ -1,0 +1,12 @@
+// Define display and body fonts
+$font_display: houschka-rounded, sans-serif;
+$font_body: adobe-garamond-pro, serif;
+
+// Define a 3-column grid layout with margins
+$grid_columns: repeat(3, 1fr);
+$grid_margin: 3rem;
+
+// Define the background, accent, and text color
+$color_accent: #ff7aab;
+$color_background: #fff;
+$color_text: #222;

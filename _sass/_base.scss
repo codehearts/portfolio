@@ -1,0 +1,83 @@
+// Classes
+// .button
+//   Renders a large inline-block button, for use with a
+// .understate
+//   Renders text in the base text color, for use with span in an h1
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font: 18px $font_body;
+}
+
+body {
+  background: $color_background;
+  margin: 5rem 0;
+  padding: 0;
+  font: 18px $font_body;
+  text-transform: lowercase;
+  color: $color_text;
+
+  // Set the content width for the page
+  & > article,
+  & > footer,
+  & > nav {
+    margin: 0 auto;
+    width: 80vw;
+    max-width: 800px;
+  }
+}
+
+h1, h2, h3 {
+  font-family: $font_display;
+  font-weight: normal;
+  color: $color_accent;
+  line-height: 1.25;
+}
+
+h1 {
+  margin: 5rem 0;
+  font-size: 3rem;
+}
+
+h2 {
+  font: 1.5rem $font_body;
+  color: $color_text;
+}
+
+a {
+  transition: all 0.3s ease;
+  color: $color_accent;
+
+  // Buttons are more block-level than inline anchors
+  &.button {
+    border-bottom: 2px solid $color_accent;
+    padding: 1ex 1em calc(1ex - 2px);
+    display: inline-block;
+    font-family: $font_display;
+    text-decoration: none;
+    line-height: 1;
+
+    &:hover {
+      background: $color_accent;
+      color: $color_background;
+    }
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Renders text in a heading with the regular text color
+.understate {
+  color: $color_text;
+}
