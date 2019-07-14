@@ -10,6 +10,7 @@ My personal portfolio site, served statically and cooked up with Jekyll
 - `_bios/` Bios for human beings (just me honestly)
 - `_layouts/` Layout templates for pages to use
   - `codehearts.html` The base page template, containing the document head and body w/ footer
+- `_repos/` Featured GitHub repos
 - `css/` CSS files to copy to the site output
   - `codehearts.scss` The base site stylesheet
 - `img/` Image files copied as-is to the site output, no resizing or optimization occurs
@@ -24,3 +25,12 @@ Bios take a brief description and have the following front matter:
 - `links` Array of links with the following properties
   - `name` Name of the link, and label for the button
   - `link` URL for the link
+
+### Repos
+
+Repositories take a super short description and have the following front matter:
+
+- `name` Human readable name, with apostrophes and spaces instead of dashes
+- `repo` GitHub repo with the username and repo name, like `codehearts/codehearts`
+
+Repos are displayed in the sorted order of their filenames, so each file is prepended with a number to influence the sorting

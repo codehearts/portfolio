@@ -22,3 +22,17 @@ layout: codehearts
     </nav>
   {% endfor %}
 </article>
+
+<article class="repos">
+  <h1>this is what i'm doing</h1>
+
+  {% for repo in site.repos %}
+    <article>
+      <h2>{{ repo.name }}</h2>
+
+      {{ repo.content }}
+
+      <a href="https://github.com/{{ repo.repo }}" class="button">browse</a>
+    </article>
+  {% endfor %}
+</article>
