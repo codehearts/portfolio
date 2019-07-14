@@ -36,3 +36,28 @@ layout: codehearts
     </article>
   {% endfor %}
 </article>
+
+<article class="works">
+  <h1>this is what i've done</h1>
+
+  {% for work in site.works reversed %}
+    <article>
+      <h2>{{ work.name }}</h2>
+      <h3>{{ work.time }}</h3>
+
+      {{ work.content }}
+
+      {% if work.link %}
+        <p>
+          <a href="{{ work.link }}" class="button">
+            {{ work.link_label | default: work.link }}
+          </a>
+        </p>
+      {% endif %}
+
+      <figure>
+        <img src="{{ work.image }}" alt="{{ work.image_alt }}">
+      </figure>
+    </article>
+  {% endfor %}
+</article>
