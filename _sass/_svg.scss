@@ -1,0 +1,19 @@
+// Escapes # characters in hex colors for SVG
+@function get_svg_color($color) {
+  @return "%23#{str-slice("#{$color}", 2)}"
+}
+
+// Draws a heart with the given color, with optional stroke width
+@function heart_svg($color, $stroke_width: 4px) {
+  @return url('data:image/svg+xml;utf8,\
+    <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg" version="1.1">\
+      <path fill="none" stroke="#{get_svg_color($color)}"\
+            stroke-width="#{$stroke_width}" stroke-linejoin="round"\
+            vector-effect="non-scaling-stroke"\
+            d="M 10,45\
+               A 10,10 0,0,1 50,20\
+               A 10,10 0,0,1 90,45\
+               L 50,90 Z" />\
+    </svg>')
+}
+

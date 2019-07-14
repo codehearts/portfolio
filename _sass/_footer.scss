@@ -1,0 +1,48 @@
+// Classes
+// .heart
+//   Centers a short message within a beating heart image
+// .copyright
+//   Intended for a copyright message
+
+body > footer {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: $grid_columns;
+  grid-column-gap: $grid_margin;
+  grid-auto-rows: min-content;
+
+  & > .heart {
+    margin: 0;
+    // A total vertical padding of 100% with a height of 0 creates a square
+    padding: 27.5% 0 72.5%;
+    grid-column: 1 / span 1;
+    position: relative;
+    font-size: 4vw;
+    text-align: center;
+    height: 0;
+
+    // Beating heart image
+    &::after {
+      animation: heartbeat 2s ease-in-out infinite alternate;
+      background-image: heart_svg($color_accent);
+      background-size: contain;
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  // Display at the bottom right of the grid
+  & > .copyright {
+    margin: 0;
+    grid-column: 3 / span 1;
+    align-self: end;
+    font: 1rem $font_display;
+    text-align: right;
+    color: $color_accent;
+  }
+}

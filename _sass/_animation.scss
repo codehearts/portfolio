@@ -1,0 +1,10 @@
+// Enlarges an element as if it were beating like a heart
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
+}
