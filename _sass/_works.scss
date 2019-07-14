@@ -1,0 +1,87 @@
+.works {
+  & > article {
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: $grid_columns;
+    grid-column-gap: $grid_margin;
+    grid-auto-rows: min-content;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    // Work heading
+    & > h2,
+    & > h1 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    // Work subheading
+    & > h2 + h3,
+    & > h1 + h2 {
+      margin-top: 0;
+      margin-bottom: 2em;
+      font: italic 1rem $font_body;
+      color: $color_text;
+    }
+
+    // All content but the figure occupies the rightmost two columns
+    & > .button,
+    & > h3,
+    & > h2,
+    & > h1,
+    & > p {
+      grid-column: 2 / span 2;
+      margin-top: 0;
+    }
+
+    // The figure occupies the first row and column, and expands past the grid
+    & > figure {
+      margin-left: -10vw;
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 99;
+      width: calc(100% + 10vw);
+    }
+
+    // Every even numbered work is aligned to the right
+    &:nth-child(2n - 1) {
+      text-align: right;
+
+      // All content but the figure occupies the leftmost two columns
+      & > .button,
+      & > h3,
+      & > h2,
+      & > h1,
+      & > p {
+        grid-column: 1 / span 2;
+      }
+
+      // The figure is now on the first row and third column
+      & > figure {
+        margin-left: 0;
+        grid-column: 3 / span 1;
+      }
+    }
+  }
+}
+
+// Styles when the layout has reached its max width
+@media screen and (min-width: 1000px) {
+  .works {
+    & > article {
+      // Adjust the figures to expand to the edge of the viewport
+      & > figure {
+        width: calc(100% + (100vw - 800px) / 2);
+        max-width: 512px;
+      }
+
+      // Every odd numbered figure needs its left margin adjusted
+      &:nth-child(2n) {
+        & > figure {
+          margin-left: calc((100vw - 800px) / -2);
+        }
+      }
+    }
+  }
+}
