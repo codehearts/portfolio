@@ -17,3 +17,20 @@
     </svg>')
 }
 
+// Draws a cursive heart in the given color, for use when tiling horizontally
+@function curly_heart_svg($color) {
+  @return url('data:image/svg+xml;utf8,\
+    <svg height="100" width="140" xmlns="http://www.w3.org/2000/svg" version="1.1">\
+      <path fill="none" stroke="#{get_svg_color($color)}"\
+            opacity="0.5"\
+            stroke-width="2px" stroke-linejoin="round"\
+            vector-effect="non-scaling-stroke"\
+            d="M -1,80\
+               Q 90,80 110,45\
+               A 10,10 0,0,0 70,20\
+               C 65,25 65,35 70,35\
+               C 75,35 75,25 70,20\
+               A 10,10 0,0,0 30,45\
+               Q 50,80 141,80" />\
+    </svg>')
+}

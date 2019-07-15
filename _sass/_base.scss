@@ -15,8 +15,9 @@ html {
 }
 
 body {
-  background: $color_background;
-  margin: 5rem 0;
+  background: $color_background curly_heart_svg($color_accent) 0 3.5rem repeat-x;
+  background-size: 3rem;
+  margin: 12rem 0 5rem;
   padding: 0;
   font: 18px $font_body;
   text-transform: lowercase;
