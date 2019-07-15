@@ -1,8 +1,39 @@
+// Animation for lefthand column stars
+@keyframes stars_left {
+  0% {
+    background-position: 16em 0.5em, 11.5em 5em, 14em 11.5em;
+  }
+
+  50% {
+    background-position: 16em 3em, 11.5em 6em, 14em 10.5em;
+  }
+
+  100% {
+    background-position: 16em 0em, 11.5em 4.5em, 14em 11.5em;
+  }
+}
+
+// Animation for righthand column stars
+@keyframes stars_right {
+  0% {
+    background-position: 0em 0em, 5em 5em, 2em 11em;
+  }
+
+  50% {
+    background-position: 0em 2em, 5em 2.5em, 2em 9em;
+  }
+
+  100% {
+    background-position: 0em 0em, 5em 7em, 2em 11em;
+  }
+}
+
 .repos {
   display: grid;
   grid-template-columns: $grid_columns;
   grid-column-gap: $grid_margin;
   grid-auto-rows: min-content;
+  position: relative;
 
   // Heading spans all three columns
   & > h1 {
@@ -17,6 +48,54 @@
     & > h1,
     & > h2 {
       margin-top: 0;
+    }
+  }
+
+  &::before,
+  &::after {
+    background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    top: 10rem;
+    opacity: 0.5;
+    width: 20rem;
+    height: 20rem;
+    pointer-events: none;
+  }
+
+  // Add stars and a moon to the lefthand side
+  &::before {
+    animation: stars_left 8s ease infinite alternate;
+    background-image:
+      star_svg($color_accent, $rotate: 30),
+      moon_svg($color_accent),
+      star_svg($color_accent, $rotate: 55);
+    background-size: 2.5rem, 3rem, 3.5rem;
+    background-position: 16em 0.5em, 11.5em 5em, 14em 11.5em;
+    left: -21rem;
+  }
+
+  // Add stars to the righthand side
+  &::after {
+    animation: stars_right 8s ease infinite alternate;
+    animation-delay: -2s;
+    background-image:
+      star_svg($color_accent, $rotate: -10),
+      star_svg($color_accent, $rotate: 45),
+      star_svg($color_accent, $rotate: 80);
+    background-size: 3rem, 2.5rem, 3.5rem;
+    background-position: 0em 0em, 5em 5em, 2em 11em;
+    left: 100%;
+    // Avoids horizontal scrolling when this element extends past the viewport
+    max-width: 10vw;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .repos {
+    &::after {
+      // Ensure the righthand stars extend exactly to the edge of the viewport
+      max-width: calc((100vw - 800px) / 2);
     }
   }
 }

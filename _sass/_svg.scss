@@ -34,3 +34,33 @@
                Q 50,80 141,80" />\
     </svg>')
 }
+
+// Draws a star with the given color, with optional stroke width and rotation
+@function star_svg($color, $stroke_width: 2px, $rotate: 0deg) {
+  @return url('data:image/svg+xml;utf8,\
+    <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg" version="1.1">\
+      <path fill="none" stroke="#{get_svg_color($color)}"\
+            stroke-width="#{$stroke_width}" stroke-linejoin="round"\
+            transform="rotate(#{$rotate} 50 50)"\
+            vector-effect="non-scaling-stroke"\
+            d="M 22.5,90\
+               L 90,40\
+               L 10,40\
+               L 77.5,90\
+               L 50,10 Z" />\
+    </svg>')
+}
+
+// Draws a moon with the given color, with optional stroke width and rotation
+@function moon_svg($color, $stroke_width: 2px, $rotate: 0) {
+  @return url('data:image/svg+xml;utf8,\
+    <svg height="100" width="100" xmlns="http://www.w3.org/2000/svg" version="1.1">\
+      <path fill="none" stroke="#{get_svg_color($color)}"\
+            transform="rotate(#{$rotate - 30} 50 50)"\
+            vector-effect="non-scaling-stroke"\
+            stroke-width="#{$stroke_width}" stroke-linejoin="round"\
+            d="M 80,20\
+               A 40,40 0,1,0 80,80\
+               C 20,90 20,10 80,20" />\
+    </svg>')
+}
