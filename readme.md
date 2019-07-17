@@ -1,4 +1,4 @@
-# codehearts
+# codehearts [![Build Status](https://travis-ci.com/codehearts/codehearts.svg?branch=master)](https://travis-ci.com/codehearts/codehearts)
 
 My personal portfolio site, served statically and cooked up with Jekyll
 
@@ -7,7 +7,7 @@ My personal portfolio site, served statically and cooked up with Jekyll
 For local development, use Docker Compose to automatically compile and serve your work. Results will be available on [localhost:80](http://localhost)
 
 ```
-JEKYLL_CMD='build --watch' docker-compose up -d
+docker-compose up -d
 ```
 
 Deployment occurs automatically when the build for a commit on `master` succeeds
@@ -27,8 +27,9 @@ Deployment occurs automatically when the build for a commit on `master` succeeds
 - `css/` CSS files to copy to the site output
   - `codehearts.scss` The base site stylesheet
   - `pdf.scss` The PDF stylesheet, containing print-oriented styles
-- `img/` Image files copied as-is to the site output, no resizing or optimization occurs
 - `docker-compose.yml` Local development and CI build environment
+- `.deploy.key.enc` Encrypted private key for server `deploy` user
+- `.travis.yml` Builds, verifies site integrity, and deploys `master` to production
 
 ### Bios
 

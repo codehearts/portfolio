@@ -4,8 +4,8 @@ services:
   # Jekyll service for generating the static site
   jekyll:
     image: 'jekyll/jekyll:3.8.5'
-    # JEKYLL_CMD can be set to change the run behavior (defaults to "build")
-    command: jekyll ${JEKYLL_CMD-build}
+    # JEKYLL_CMD can be set to change the run behavior (defaults to "build --watch")
+    command: jekyll ${JEKYLL_CMD-build --watch}
     networks:
       - jekyll_gotenberg
     volumes:
