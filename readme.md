@@ -57,3 +57,54 @@ Works take a brief to moderate description and have the following front matter:
 - `image_alt` Screenshot of my CIF home page design
 
 Works are displayed in the _reverse_ sorted order of their filenames, so each file is prepended with a number to influence the sorting
+
+## Setup
+
+Assuming an Ubuntu server, configure as follows:
+
+- Install prerequisite software
+  - `add-apt-repository ppa:certbot/certbot`
+  - `apt-get update && apt-get install nginx python-certbot-nginx`
+- Create a non-root user with sudo and web server permissions
+  - `adduser -G sudo,www-data katie`
+- Create a deployment user which can only sign in via key over SSH
+  - `adduser --disabled-password --gecos '' deploy`
+  - Create an SSH key for the deployment user on your local machine
+    - `ssh-keygen -t rsa -f .deploy.key`
+  - Append the contents of `.deploy.key.pub` on your local machine to `/home/deploy/.ssh/authorized_keys`
+  - Encrypt the private key on your local machine for Travis CI
+    - `travis encrypt-file --com --add .deploy.key && chmod 600 .deploy.key.enc`
+- Configure the firewall to allow only SSH and HTTP/HTTPS traffic
+  - `ufw default deny incoming && ufw allow OpenSSH && ufw allow 'Nginx Full' && ufw enable`
+- Create a server block for the domain, accessible only by the deployment user
+  - `mkdir -p /var/www/codehearts.com/html/ && chown deploy:www-data /var/www/codehearts.com/html/`
+  - Create `/etc/nginx/sites-available/codehearts.com` with the following contents:
+
+        # Cache-Control mapping
+        map $sent_http_content_type $expires {
+          default                    off;
+          text/html                  epoch;
+          text/css                   max;
+          application/javascript     max;
+          ~image/                    max;
+        }
+
+        server {
+          root /var/www/codehearts.com/html;
+          index index.html;
+          expires $expires;
+
+          server_name codehearts.com www.codehearts.com;
+
+          location / {
+            try_files $uri $uri/ =404;
+          }
+        }
+  - `ln -s /etc/nginx/sites-available/codehearts.com /etc/nginx/sites-enabled/`
+- Configure SSL
+  - `certbot --nginx -d codehearts.com -d www.codehearts.com --agree-tos --redirect`
+- Enable ssh for the non-root user
+  - `su - katie -c 'mkdir ~/.ssh/ && vim ~/.ssh/authorized_keys'`
+- Disable the root user
+  - `passwd -l root`
+  - Edit `/etc/ssh/sshd_config` and set `PermitRootLogin` to `no`
