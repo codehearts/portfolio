@@ -4,6 +4,14 @@ My personal portfolio site, served statically and cooked up with Jekyll
 
 ## Development
 
+For local development, run Jekyll through Docker to automatically compile and serve your work. Results will be available at [0.0.0.0:4000](http://0.0.0.0:4000)
+
+```
+docker run --rm -v$PWD:/srv/jekyll -p4000:4000 jekyll/jekyll jekyll serve
+```
+
+Deployment occurs automatically when the build for a commit on `master` succeeds
+
 ### Files
 
 - `_config.yml` Jekyll configuration
