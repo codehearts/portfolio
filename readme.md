@@ -18,6 +18,7 @@ Deployment occurs automatically when the build for a commit on `master` succeeds
 - `_bios/` Bios for human beings (just me honestly)
 - `_layouts/` Layout templates for pages to use
   - `codehearts.html` The base page template, containing the document head and body w/ footer
+  - `pdf.html` The page template for PDF documents
 - `_plugins/` Extensions for Jekyll
   - `jekyll-gotenberg.rb` Converts pages with `pdf` set in their front matter to PDF during site generation
 - `_repos/` Featured GitHub repos
@@ -25,6 +26,7 @@ Deployment occurs automatically when the build for a commit on `master` succeeds
 - `_works/` Featured completed works, with images
 - `css/` CSS files to copy to the site output
   - `codehearts.scss` The base site stylesheet
+  - `pdf.scss` The PDF stylesheet, containing print-oriented styles
 - `img/` Image files copied as-is to the site output, no resizing or optimization occurs
 - `docker-compose.yml` Local development and CI build environment
 
