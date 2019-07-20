@@ -19,7 +19,7 @@ install:
 script:
   - docker-compose pull --parallel
   - JEKYLL_CMD=build docker-compose up --exit-code-from jekyll
-  - htmlproofer --check_html --check_img_http _site/
+  - htmlproofer --check_html --check_img_http --url_ignore /cif.rochester.edu/ _site/
 
 before_deploy:
   - umask 0377
