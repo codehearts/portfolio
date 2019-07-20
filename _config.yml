@@ -1,7 +1,18 @@
 permalink: pretty
+exclude:
+  - docker-compose.yml
+  - license.md
+  - readme.md
 collections:
   - bios
   - repos
   - works
 sass:
   style: compressed
+pdf:
+  gotenberg:
+    host: gotenberg
+    port: 3000
+  web:
+    host: nginx
+    port: 80

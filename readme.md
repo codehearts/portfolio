@@ -4,10 +4,10 @@ My personal portfolio site, served statically and cooked up with Jekyll
 
 ## Development
 
-For local development, run Jekyll through Docker to automatically compile and serve your work. Results will be available at [0.0.0.0:4000](http://0.0.0.0:4000)
+For local development, use Docker Compose to automatically compile and serve your work. Results will be available on [localhost:80](http://localhost)
 
 ```
-docker run --rm -v$PWD:/srv/jekyll -p4000:4000 jekyll/jekyll jekyll serve
+JEKYLL_CMD='build --watch' docker-compose up -d
 ```
 
 Deployment occurs automatically when the build for a commit on `master` succeeds
@@ -18,12 +18,15 @@ Deployment occurs automatically when the build for a commit on `master` succeeds
 - `_bios/` Bios for human beings (just me honestly)
 - `_layouts/` Layout templates for pages to use
   - `codehearts.html` The base page template, containing the document head and body w/ footer
+- `_plugins/` Extensions for Jekyll
+  - `jekyll-gotenberg.rb` Converts pages with `pdf` set in their front matter to PDF during site generation
 - `_repos/` Featured GitHub repos
 - `_sass/` Sass files to compile and access from the `css/` directory
 - `_works/` Featured completed works, with images
 - `css/` CSS files to copy to the site output
   - `codehearts.scss` The base site stylesheet
 - `img/` Image files copied as-is to the site output, no resizing or optimization occurs
+- `docker-compose.yml` Local development and CI build environment
 
 ### Bios
 

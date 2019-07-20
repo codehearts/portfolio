@@ -1,0 +1,35 @@
+version: '3.3'
+
+services:
+  # Jekyll service for generating the static site
+  jekyll:
+    image: 'jekyll/jekyll:3.8.5'
+    # JEKYLL_CMD can be set to change the run behavior (defaults to "build")
+    command: jekyll ${JEKYLL_CMD-build}
+    networks:
+      - jekyll_gotenberg
+    volumes:
+      - ./:/srv/jekyll
+  # Nginx serves the static site on port 80, for Gotenberg and local developers
+  nginx:
+    image: 'nginx:1.17.1'
+    networks:
+      - jekyll_gotenberg
+    ports:
+      - '80:80'
+    volumes:
+      - ./_site:/usr/share/nginx/html:ro
+  # Gotenberg receives requests on port 3000
+  gotenberg:
+    image: 'thecodingmachine/gotenberg:5.1.0'
+    environment:
+      # Disable Open Office conversion
+      DISABLE_UNOCONV: 1
+    networks:
+      - jekyll_gotenberg
+    expose:
+      - '3000'
+
+networks:
+  jekyll_gotenberg:
+    driver: 'bridge'
