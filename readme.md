@@ -22,6 +22,7 @@ Deployment occurs automatically when the build for a commit on `master` succeeds
 - `_plugins/` Extensions for Jekyll
   - `jekyll-gotenberg.rb` Converts pages with `pdf` set in their front matter to PDF during site generation
 - `_repos/` Featured GitHub repos
+- `_resumes/` Resumé data
 - `_sass/` Sass files to compile and access from the `css/` directory
 - `_works/` Featured completed works, with images
 - `css/` CSS files to copy to the site output
@@ -50,6 +51,34 @@ Repositories take a super short description and have the following front matter:
 - `repo` GitHub repo with the username and repo name, like `codehearts/codehearts`
 
 Repos are displayed in the sorted order of their filenames, so each file is prepended with a number to influence the sorting
+
+### Resumés
+
+Resumés contain only the following front matter:
+
+- `name` Who the resumé is for (basically just me)
+- `links` Array of contact links with the following properties
+  - `name` Label for the link
+  - `link` URL for the link
+- `experiences` Array of prior work experience
+  - `position` Title of the position held
+  - `location` Name of the workplace
+  - `start` Start year
+  - `end` End year, defaults to "current"
+  - `notes` Array of notes about the experience
+- `education` Array of schools with the following properties
+  - `where` Name of the school
+  - `what` Degree obtained
+  - `when` Year of graduation
+- `technologies` Array of technology experience with the following properties
+  - `experienced` Array of technologies you're experienced with
+  - `familiar` Array of technologies you're less experienced with
+  - `interested` Array of technologies you're interested in learning
+- `references` Array of references with the following properties
+  - `name` Name of the reference
+  - `relation` Position and company, or relationship to the reference
+  - `link`: URL to contact the reference
+  - `link_label` Label for the reference's contact link
 
 ### Works
 

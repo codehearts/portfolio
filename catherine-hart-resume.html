@@ -2,3 +2,70 @@
 layout: pdf
 pdf: true
 ---
+
+{% for resume in site.resumes %}
+  <header>
+    <h1>{{ resume.name }}</h1>
+
+    <nav>
+      <ul>
+        {% for link in resume.links %}
+          <li><a href="{{ link.link }}">{{ link.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h1>Employment &amp; Voluntary Experience</h1>
+
+    {% for experience in resume.experiences %}
+      <article>
+        <h2>{{ experience.position }}, {{ experience.location }} ({{ experience.start }}&ndash;{{ experience.end | default: 'current' }})</h2>
+
+        <ul>
+          {% for note in experience.notes %}
+            <li>{{ note }}</li>
+          {% endfor %}
+        </ul>
+      </article>
+    {% endfor %}
+  </section>
+
+  <section class="repos">
+    <h1>Personal Work <span class="sidenote">See more at <a href="https://codehearts.com">codehearts.com</a> and <a href="https://github.com/codehearts">github.com/codehearts</a></span></h1>
+
+    {% for repo in site.repos %}
+      <article>
+        <h2>{{ repo.name }}</h2>
+
+        <a href="https://github.com/{{ repo.repo }}">github.com/{{ repo.repo }}</a>
+        {{ repo.content }}
+      </article>
+    {% endfor %}
+
+    <p></p>
+  </section>
+
+  <section>
+    <h1>Education and Technology Experience</h1>
+
+    <ul>
+      {% for school in resume.education %}
+        <li>{{ school.where }}, {{ school.what }} ({{ school.when }})</li>
+      {% endfor %}
+      <li>Experienced in {{ resume.technologies.experienced | join: ', ' }}; less so in {{ resume.technologies.familiar | join: ', ' }}</li>
+      <li>Interested in {{ resume.technologies.interested | join: ', ' }}</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1>References</h1>
+
+    <ul>
+    {% for person in resume.references %}
+    <li>{{ person.name }}, {{ person.relation }} (<a href="{{ person.link }}">{{ person.link_label }}</a>)</li>
+    {% endfor %}
+    </ul>
+  </section>
+{% endfor %}

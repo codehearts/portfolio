@@ -6,6 +6,7 @@ exclude:
 collections:
   - bios
   - repos
+  - resumes
   - works
 sass:
   style: compressed
