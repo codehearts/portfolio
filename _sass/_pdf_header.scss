@@ -1,0 +1,42 @@
+header {
+  // Name
+  & > h1 {
+    margin-bottom: 0;
+  }
+
+  // Contact info
+  & > nav {
+    & > ul {
+      padding: 0;
+      list-style: none;
+
+      & > li {
+        display: inline;
+
+        & > a {
+          font-family: $font_display;
+          color: $color_text;
+        }
+
+        &::after {
+          background-size: contain;
+          margin-left: 0.75ex;
+          display: inline-block;
+          content: '';
+          width: 0.75em;
+          height: 0.75em;
+        }
+
+        // First link is followed by a moon
+        &:nth-child(1)::after {
+          background-image: moon_svg($color_text, $stroke_width: 0.2mm);
+        }
+
+        // Second link is followed by a star
+        &:nth-child(2)::after {
+          background-image: star_svg($color_text, $stroke_width: 0.2mm);
+        }
+      }
+    }
+  }
+}

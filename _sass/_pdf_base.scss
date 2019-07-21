@@ -1,0 +1,51 @@
+// Classes
+// .sidenote
+//   Renders a sidenote in italics
+
+html {
+  margin: 1in;
+  padding: 0;
+  font: 10pt $font_body;
+  line-height: 1.25;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 2rem 0;
+  font: normal 2rem $font_display;
+  text-transform: lowercase;
+  color: $color_accent;
+}
+
+h2 {
+  font: normal 1.3rem $font_body;
+  color: $color_text;
+}
+
+h3 {
+  font: normal 1rem $font_body;
+}
+
+ul {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  font-weight: normal;
+  text-decoration: none;
+  color: $color_accent;
+}
+
+// Renders a sidenote in italics
+.sidenote {
+  font: italic 1rem $font_body;
+  color: $color_text;
+}

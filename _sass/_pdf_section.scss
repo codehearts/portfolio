@@ -1,0 +1,20 @@
+section {
+  ul {
+    padding: 0;
+
+    & > li {
+      list-style: none;
+
+      // Lists use a heart as their bullet
+      &::before {
+        background: center 75% / 0.5em no-repeat heart_svg($color_text, $stroke_width: 0.2mm);
+        margin-right: 0.5ex;
+        margin-left: calc(-1em - 0.5ex);
+        display: inline-block;
+        content: '';
+        height: 1em;
+        width: 1em;
+      }
+    }
+  }
+}
