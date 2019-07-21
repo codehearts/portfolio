@@ -64,3 +64,34 @@
                C 20,90 20,10 80,20" />\
     </svg>')
 }
+
+// Draws an animated, tileable wavy box with the given color, with optional speed
+@function wave_svg($color, $speed: 2s) {
+  @return url("data:image/svg+xml;utf8,\
+    <svg height='160' width='160' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1'>\
+      <g transform='scale(4)'>\
+        <pattern x='-15' id='wave' patternUnits='userSpaceOnUse' width='20' height='10'>\
+            <path d='m 0,12.5 v -10 q 5,-5 10,0 t 10,0 v 10' fill='#{get_svg_color($color)}' />\
+            <animate attributeName='x' from='-15' to='5' dur='#{$speed}' repeatCount='indefinite'/>\
+        </pattern>\
+        <rect x='10' y='0' width='20' height='10' fill='url(%23wave)'/>\
+        <rect x='10' y='-40' width='20' height='10' fill='url(%23wave)' transform='rotate(90 0 0)'/>\
+        <rect x='-30' y='-40' width='20' height='10' fill='url(%23wave)' transform='rotate(180 0 0)'/>\
+        <rect x='-30' y='0' width='20' height='10' fill='url(%23wave)' transform='rotate(270 0 0)'/>\
+        <g id='top-right-corner'>\
+          <path fill='#{get_svg_color($color)}'>\
+            <animate attributeName='d'\
+              values='m 30,0 a 10,10 0,0,1 10,10 h -10;\
+                      m 30,5 a 5,5 0,0,1 5,5 h -5;\
+                      m 30,0 a 10,10 0,0,1 10,10 h -10'\
+              calcMode='spline' keyTimes='0;0.5;1' keySplines='0.5 0 0.5 1; 0.5 0 0.5 1'\
+              dur='#{$speed}' repeatCount='indefinite'/>\
+          </path>\
+        </g>\
+        <use xlink:href='%23top-right-corner' x='0' y='-40' transform='rotate(90)' />\
+        <use xlink:href='%23top-right-corner' x='-40' y='-40' transform='rotate(180)' />\
+        <use xlink:href='%23top-right-corner' x='-40' y='0' transform='rotate(270)' />\
+        <rect x='10' y='10' width='20' height='20' fill='#{get_svg_color($color)}'/>\
+      </g>\
+    </svg>")
+}

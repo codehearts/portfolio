@@ -75,6 +75,8 @@ figure {
 }
 
 img {
+  border-width: 1px;
+  border-image: wave_svg($color_accent, $speed: 4s) 40 fill / 20px / 20px stretch;
   max-width: 100%;
 }
 
