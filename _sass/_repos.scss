@@ -99,3 +99,18 @@
     }
   }
 }
+
+@media (max-width: $mini_max_width) {
+  .repos {
+    // Each repo spans all three columns
+    & > article {
+      grid-column: 1 / span 3;
+      grid-row-start: auto;
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -46,3 +46,24 @@ body > footer {
     color: $color_accent;
   }
 }
+
+@media (max-width: $mini_max_width) {
+  body > footer {
+    display: block;
+
+    // Center the heart horizontally
+    & > .heart {
+      margin: 0 auto;
+      padding: 15% 0 0;
+      font-size: 8vw;
+      height: 40vw;
+      width: 40vw;
+    }
+
+    // Display centered at the bottom of the page
+    & > .copyright {
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+}

@@ -85,3 +85,47 @@
     }
   }
 }
+
+@media (max-width: $mini_max_width) {
+  .works {
+    & > article {
+      grid-column-gap: 0;
+
+      // All content but the figure occupies all three columns
+      & > .button,
+      & > h3,
+      & > h2,
+      & > h1,
+      & > p {
+        grid-column: 1 / span 3;
+      }
+
+      // The figure is in the middle of the second column
+      & > figure {
+        margin: 0 0 30px;
+        grid-column: 2 / span 1;
+        grid-row: 1 / span 1;
+        width: 80vw;
+      }
+
+      // Every even numbered work
+      &:nth-child(2n - 1) {
+        text-align: left;
+
+        // All content but the figure occupies all three columns
+        & > .button,
+        & > h3,
+        & > h2,
+        & > h1,
+        & > p {
+          grid-column-end: span 3;
+        }
+
+        // The figure is in the middle of the second column
+        & > figure {
+          grid-column: 2 / span 1;
+        }
+      }
+    }
+  }
+}
