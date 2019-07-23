@@ -13,4 +13,4 @@ links:
     link: /catherine-hart-resume.pdf
 ---
 
-I'm an embedded systems developer at Genie Industries, who recently graduated from the University of Rochester with a B.S. in computer science. My interests lie with Linux, C, and Python, which I use frequently for the numerous projects I've taken on in my free time. I used to be more involved with web design and development, but I've found that my heart is more with systems
+I'm Katie, a software developer at Accretive Technology Group with my B.S. in computer science from the University of Rochester. I love working with Linux, C, Python, and Docker; building things from Linux utilities to games to websites. Previously, I was an embedded systems developer at Genie Industries
