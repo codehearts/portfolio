@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background: $color_background curly_heart_svg($color_accent) 0 3.5rem repeat-x;
+  background: $color_background url('/img/curly-heart.svg') 0 3.5rem repeat-x;
   background-size: 3rem;
   margin: 12rem 0 5rem;
   padding: 0;
@@ -76,7 +76,7 @@ figure {
 
 img {
   border-width: 1px;
-  border-image: wave_svg($color_accent, $speed: 4s) 40 fill / 20px / 20px stretch;
+  border-image: url('/img/wave.svg') 40 fill / 20px / 20px stretch;
   max-width: 100%;
 }
 

@@ -20,21 +20,22 @@ header {
 
         &::after {
           background-size: contain;
-          margin-left: 0.75ex;
+          margin: -2em -2em -2.25em calc(-2em + 0.75ex);
+          transform: scale(0.25);
           display: inline-block;
           content: '';
-          width: 0.75em;
-          height: 0.75em;
+          width: 5em;
+          height: 5em;
         }
 
         // First link is followed by a moon
         &:nth-child(1)::after {
-          background-image: moon_svg($color_text, $stroke_width: 0.2mm);
+          background-image: url('/img/moon.svg');
         }
 
         // Second link is followed by a star
         &:nth-child(2)::after {
-          background-image: star_svg($color_text, $stroke_width: 0.2mm);
+          background-image: url('/img/star.svg');
         }
       }
     }
