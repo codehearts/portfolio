@@ -7,13 +7,14 @@ section {
 
       // Lists use a heart as their bullet
       &::before {
-        background: center 75% / 0.5em no-repeat heart_svg($color_text, $stroke_width: 0.2mm);
-        margin-right: 0.5ex;
-        margin-left: calc(-1em - 0.5ex);
+        background: center 75% / cover no-repeat url('/img/heart.svg');
+        margin: -2.125em -1.5em -2.125em -3.5em;
+        transform: scale(0.15);
+        filter: brightness(10%);
         display: inline-block;
         content: '';
-        height: 1em;
-        width: 1em;
+        height: 5em;
+        width: 5em;
       }
     }
   }

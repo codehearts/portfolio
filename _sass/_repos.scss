@@ -67,9 +67,9 @@
   &::before {
     animation: stars_left 8s ease infinite alternate;
     background-image:
-      star_svg($color_accent, $rotate: 30),
-      moon_svg($color_accent),
-      star_svg($color_accent, $rotate: 55);
+      url('/img/star.svg'),
+      url('/img/moon.svg'),
+      url('/img/star.svg');
     background-size: 2.5rem, 3rem, 3.5rem;
     background-position: 16em 0.5em, 11.5em 5em, 14em 11.5em;
     left: -21rem;
@@ -80,9 +80,9 @@
     animation: stars_right 8s ease infinite alternate;
     animation-delay: -2s;
     background-image:
-      star_svg($color_accent, $rotate: -10),
-      star_svg($color_accent, $rotate: 45),
-      star_svg($color_accent, $rotate: 80);
+      url('/img/star.svg'),
+      url('/img/star.svg'),
+      url('/img/star.svg');
     background-size: 3rem, 2.5rem, 3.5rem;
     background-position: 0em 0em, 5em 5em, 2em 11em;
     left: 100%;
