@@ -47,7 +47,7 @@ body > footer {
   }
 }
 
-@media (max-width: $mini_max_width) {
+@media (max-width: $mini_max_content_width) {
   body > footer {
     display: block;
 

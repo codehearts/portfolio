@@ -38,10 +38,10 @@
 
     // The figure occupies the first row and column, and expands past the grid
     & > figure {
-      margin-left: -10vw;
+      margin-left: #{(100vw - $content_width) / -2};
       grid-column: 1 / span 1;
       grid-row: 1 / span 99;
-      width: calc(100% + 10vw);
+      width: calc(100% + (100vw - #{$content_width}) / 2);
     }
 
     // Every even numbered work is aligned to the right
@@ -67,26 +67,26 @@
 }
 
 // Styles when the layout has reached its max width
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: #{$max_content_width / $content_width * 100vw}) {
   .works {
     & > article {
       // Adjust the figures to expand to the edge of the viewport
       & > figure {
-        width: calc(100% + (100vw - 800px) / 2);
+        width: calc(100% + (100vw - #{$max_content_width}) / 2);
         max-width: 512px;
       }
 
       // Every odd numbered figure needs its left margin adjusted
       &:nth-child(2n) {
         & > figure {
-          margin-left: calc((100vw - 800px) / -2);
+          margin-left: calc((100vw - #{$max_content_width}) / -2);
         }
       }
     }
   }
 }
 
-@media (max-width: $mini_max_width) {
+@media (max-width: $mini_max_content_width) {
   .works {
     & > article {
       grid-column-gap: 0;
