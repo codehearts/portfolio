@@ -43,7 +43,7 @@
       right: -4rem;
       width: 3.5rem;
       height: 3.5rem;
-      max-width: calc(10vw - 4rem + 3.5rem);
+      max-width: calc(#{(100vw - $content_width) / 2} - 4rem + 3.5rem);
     }
   }
 
@@ -99,7 +99,7 @@
   }
 }
 
-@media (max-width: $mini_max_width) {
+@media (max-width: $mini_max_content_width) {
   .repos {
     // Each repo spans all three columns
     & > article {

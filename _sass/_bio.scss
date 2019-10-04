@@ -38,7 +38,7 @@
   }
 }
 
-@media (max-width: $mini_max_width) {
+@media (max-width: $mini_max_content_width) {
   .bio {
     // The heading is padded to make room for the bio image
     > h1 {

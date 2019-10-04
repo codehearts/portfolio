@@ -30,8 +30,8 @@ body {
   & > footer,
   & > nav {
     margin: 0 auto;
-    width: 80vw;
-    max-width: 800px;
+    width: $content_width;
+    max-width: $max_content_width;
   }
 }
 
