@@ -39,7 +39,9 @@ Deployment occurs automatically when the build for a commit on `master` succeeds
 Bios take a brief description and have the following front matter:
 
 - `name` Name or title
-- `image` 470px wide image
+- `image` 470px wide image suffixed with `-2x`
+  - Create a half-sized image without the `-2x` suffix `convert image-2x.png -scale=50% image.png`
+  - Create a webp for both sizes `cwebp image.png -o image.webp && cwebp image-2x.png -o image-2x.webp`
 - `image_alt` Accessibility text for `image`
 - `links` Array of links with the following properties
   - `name` Name of the link, and label for the button
@@ -90,7 +92,9 @@ Works take a brief to moderate description and have the following front matter:
 - `time` Full month name and year, or a range if the work had a start/end
 - `link` Optional URL for the work
 - `link_label` Optional button label for the work's URL, if the URL itself isn't acceptable
-- `image` 1024px wide image, 1152px tall to maintain the 8/9 ratio I seem to be using
+- `image` 1024px wide image, 1152px tall to maintain the 8/9 ratio I seem to be using, suffixed with `-2x`
+  - Create a half-sized image without the `-2x` suffix `convert image-2x.png -scale=50% image.png`
+  - Create a webp for both sizes `cwebp image.png -o image.webp && cwebp image-2x.png -o image-2x.webp`
 - `image_alt` Screenshot of my CIF home page design
 
 Works are displayed in the _reverse_ sorted order of their filenames, so each file is prepended with a number to influence the sorting

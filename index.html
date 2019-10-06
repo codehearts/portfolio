@@ -8,7 +8,13 @@ layout: codehearts
     <h1>{{ bio.name }}</h1>
 
     <figure>
-      <img src="{{ bio.image }}" alt="{{ bio.image_alt }}">
+      <picture>
+        <source type="image/webp"
+                srcset="{{ bio.image | split: "." | first }}.webp, {{ bio.image | split: "." | first }}-2x.webp 2x">
+        <img src="{{ bio.image }}"
+             srcset="{{ bio.image | split: "." | join: "-2x." }} 2x"
+             alt="{{ bio.image_alt }}">
+      </picture>
     </figure>
 
     {{ bio.content }}
@@ -56,7 +62,13 @@ layout: codehearts
       {% endif %}
 
       <figure>
-        <img src="{{ work.image }}" alt="{{ work.image_alt }}">
+        <picture>
+          <source type="image/webp"
+                  srcset="{{ work.image | split: "." | first }}.webp, {{ work.image | split: "." | first }}-2x.webp 2x">
+          <img src="{{ work.image }}"
+               srcset="{{ work.image | split: "." | join: "-2x." }} 2x"
+               alt="{{ work.image_alt }}">
+        </picture>
       </figure>
     </article>
   {% endfor %}
