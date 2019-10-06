@@ -1,0 +1,13 @@
+{% capture image %}
+{{ site.url }}/{{ include.src }}
+{% endcapture %}
+{% capture image_basename %}
+{{ image | split: "." | first }}
+{% endcapture %}
+<picture>
+  <source type="image/webp"
+          srcset="{{ image_basename }}.webp, {{ image_basename }}-2x.webp 2x">
+  <img src="{{ image }}"
+       srcset="{{ image | split: "." | join: "-2x." }} 2x"
+       alt="{{ include.alt }}">
+</picture>

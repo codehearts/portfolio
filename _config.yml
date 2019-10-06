@@ -1,3 +1,4 @@
+url: https://codehearts.com
 permalink: pretty
 exclude:
   - docker-compose.yml
