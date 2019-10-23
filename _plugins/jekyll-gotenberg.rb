@@ -51,7 +51,7 @@ def convert_html_to_pdf(item)
 end
 
 # Convert HTML to PDF after site is written if the front matter sets `pdf` true
-Jekyll::Hooks.register :site, :post_write do |site|
+Jekyll::Hooks.register :site, :post_write, priority: Jekyll::Hooks::PRIORITY_MAP[:low] do |site|
   # Search through pages and documents
   (site.pages + site.documents).each do |item|
     convert_html_to_pdf(item) if item.data['pdf']

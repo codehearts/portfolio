@@ -12,7 +12,7 @@
   & > article:first-of-type::before,
   & > article:last-of-type::after {
     animation: float_vertical 8s ease-in-out infinite alternate;
-    background-image: url('/img/star.svg');
+    background-image: url('/cache_bust(img/star.svg)');
     background-repeat: no-repeat;
     background-size: cover;
     content: '';
@@ -81,7 +81,7 @@
   &::before {
     animation-duration: 9s;
     animation-delay: -14s;
-    background-image: url('/img/moon.svg');
+    background-image: url('/cache_bust(img/moon.svg)');
     top: 15rem;
     left: -7.5rem;
     width: 2.5rem;

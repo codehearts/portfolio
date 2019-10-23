@@ -4,16 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <meta name="theme-color" content="#ff7aab">
+  <link rel="manifest" href="{{ site.url }}/{{ "site.webmanifest" | cache_busting }}">
 
   <title>{{ page.title }}</title>
 
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i%7CVarela+Round&display=swap" crossorigin="anonymous" rel="stylesheet">
-  <link rel="stylesheet" href="{{ site.url }}/css/codehearts.css?cache={{ site.time | date: '%s' }}">
+  <link rel="stylesheet" href="{{ site.url }}/{{ "css/codehearts.css" | cache_busting }}">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#ff7aab">
+  <link rel="apple-touch-icon" href="{{ site.url }}/{{ "icons/apple-touch-icon.png" | cache_busting }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/{{ "icons/favicon-32x32.png" | cache_busting }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/{{ "icons/favicon-16x16.png" | cache_busting }}">
+  <link rel="mask-icon" href="{{ site.url }}/{{ "icons/safari-pinned-tab.svg" | cache_busting }}" color="#ff7aab">
 </head>
 <body>
   {{ content }}

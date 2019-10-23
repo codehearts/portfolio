@@ -24,7 +24,7 @@ body > footer {
     // Beating heart image
     &::after {
       animation: heartbeat 2s ease-in-out infinite alternate;
-      background-image: url('/img/heart.svg');
+      background-image: url('/cache_bust(img/heart.svg)');
       background-size: contain;
       display: block;
       content: '';

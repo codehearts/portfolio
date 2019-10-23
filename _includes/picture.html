@@ -1,13 +1,17 @@
-{% capture image %}
-{{ site.url }}/{{ include.src }}
-{% endcapture %}
-{% capture image_basename %}
-{{ image | split: "." | first }}
-{% endcapture %}
+{% capture image_basename %}{{ include.src | split: "." | first }}{% endcapture %}
+{% capture image_extension %}{{ include.src | split: "." | last }}{% endcapture %}
+
+{% capture image %}{{ include.src }}{% endcapture %}
+{% capture image_2x %}{{ image_basename }}-2x.{{ image_extension }}{% endcapture %}
+
+{% capture image_webp %}{{ image_basename }}.webp{% endcapture %}
+{% capture image_webp_2x %}{{ image_basename }}-2x.webp{% endcapture %}
+
 <picture>
   <source type="image/webp"
-          srcset="{{ image_basename }}.webp, {{ image_basename }}-2x.webp 2x">
-  <img src="{{ image }}"
-       srcset="{{ image | split: "." | join: "-2x." }} 2x"
+          srcset="{{ site.url }}/{{ image_webp | cache_busting }},
+                  {{ site.url }}/{{ image_webp_2x | cache_busting }} 2x">
+  <img src="{{ site.url }}/{{ image | cache_busting }}"
+       srcset="{{ site.url }}/{{ image_2x | cache_busting }} 2x"
        alt="{{ include.alt }}">
 </picture>
