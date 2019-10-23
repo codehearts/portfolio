@@ -1,25 +1,25 @@
-language: ruby
-rvm:
-  - 2.6.3
-
-sudo: false
+language: node_js
+node_js:
+  - 12
 
 services:
   - docker
 
+env:
+  - HINT_TRACKING=off
+
 addons:
   ssh_known_hosts: codehearts.com
+  apt:
+    packages:
+      - brotli
+      - zopfli
 
-cache:
-  directories:
-    - $HOME/.rvm/gems/
-install:
-  - gem install html-proofer
-
-script:
+before_script:
   - docker-compose pull --parallel
   - JEKYLL_CMD=build docker-compose up --exit-code-from jekyll
-  - htmlproofer --check_html --check_img_http --check_favicon --url_ignore /cif.rochester.edu/ _site/
+  - docker-compose up -d
+  - sleep 10
 
 before_deploy:
   - umask 0377
@@ -30,7 +30,9 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: rsync -azP -e 'ssh -i .deploy.key' --delete
-          _site/ deploy@codehearts.com:/var/www/codehearts.com/html/
+  script: find _site/ -regex '.*\.\(html\|css\|js\|svg\|webmanifest\)' \
+            -exec sh -c 'zopfli $@; brotli $@' _ {} +
+          rsync -azP -e 'ssh -i .deploy.key' --delete _site/ \
+            deploy@codehearts.com:/var/www/codehearts.com/html/
   on:
     branch: master
