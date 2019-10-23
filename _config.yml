@@ -1,4 +1,3 @@
-url: https://codehearts.com
 permalink: pretty
 exclude:
   - node_modules/
