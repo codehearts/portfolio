@@ -39,8 +39,8 @@ technologies:
   experienced:
     - Python
     - C
-    - Bash (and POSIX)
-    - Linux (Debian)
+    - POSIX shells
+    - Linux
   familiar:
     - JavaScript
     - CSS (SASS)
