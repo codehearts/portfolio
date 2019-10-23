@@ -1,0 +1,46 @@
+{
+    "extends": ["all"],
+    "connector": {
+        "name": "jsdom"
+    },
+    "formatters": [
+        "html",
+        "stylish"
+    ],
+    "hints": {
+        "amp-validator": "off",
+        "babel-config/*": "off",
+        "html-checker": ["error", {
+            "ignore": "Consider using the “h1” element as a top-level heading only (all “h1” elements are treated as top-level headings by many screen readers and other tools)."
+        }],
+        "image-optimization-cloudinary": "off",
+        "typescript-config/*": "off",
+        "webpack-config/*": "off"
+    },
+    "ignoredUrls": [{
+        "domain": "codehearts.com",
+        "hints": [
+            "apple-touch-icons",
+            "compat-api/css",
+            "compat-api/html",
+            "html-checker",
+            "manifest-exists",
+            "meta-theme-color",
+            "meta-viewport"
+          ]
+    }, {
+        "domain": "localhost",
+        "hints": [
+            "content-type",
+            "http-cache",
+            "http-compression",
+            "https-only",
+            "no-disallowed-headers",
+            "ssllabs",
+            "x-content-type-options"
+        ]
+    }, {
+        "domain": "fonts.googleapis.com",
+        "hints": ["*"]
+    }]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "codehearts",
+  "version": "1.0.0",
+  "description": "Development tools for codehearts.com",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codehearts/codehearts.git"
+  },
+  "author": "Catherine Hart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codehearts/codehearts/issues"
+  },
+  "homepage": "https://github.com/codehearts/codehearts#readme",
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "not ie <= 11",
+    "not dead"
+  ],
+  "devDependencies": {
+    "@hint/configuration-all": "^1.0.11",
+    "@hint/connector-jsdom": "^4.0.13",
+    "hint": "^5.3.3"
+  },
+  "scripts": {
+    "hint": "hint http://localhost && hint https://codehearts.com",
+    "test": "npm run hint"
+  }
+}

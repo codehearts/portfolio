@@ -1,7 +1,11 @@
 url: https://codehearts.com
 permalink: pretty
 exclude:
+  - node_modules/
+  - hint-report/
   - docker-compose.yml
+  - package-lock.json
+  - package.json
   - license.md
   - readme.md
 collections:
