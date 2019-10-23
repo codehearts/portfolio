@@ -103,9 +103,26 @@ Works are displayed in the _reverse_ sorted order of their filenames, so each fi
 
 Assuming an Ubuntu server, configure as follows:
 
+- Uncomment the `deb-src` line for the main security repo in `/etc/apt/sources.list`
 - Install prerequisite software
 
-        apt-get update && apt-get install nginx gnupg2
+        apt-get update \
+          && apt-get install nginx libpcre3-dev zlib1g-dev libssl-dev libxslt1-dev libgd-dev libgeoip-dev git gnupg2 \
+          && apt-get source nginx
+
+        # Build and install the nginx brotli module
+        git clone https://github.com/google/ngx_brotli.git
+        cd ngx_brotli/
+        git submodule update --init
+        cd ../nginx-*/
+        # Provide the same arguments as `nginx -V`
+        ./configure --add-dynamic-module=../ngx_brotli
+        make modules
+        mv objs/ngx_http_brotli_static_module.so /usr/share/nginx/modules/
+        echo 'load_module modules/ngx_http_brotli_static_module.so;' > /etc/nginx/modules-available/50-mod-brotli.conf
+        ln -s /etc/nginx/modules-available/50-mod-brotli.conf /etc/nginx/modules-enabled/
+        cd ..
+        rm -rf nginx* ngx_brotli
 
         # Install certbot-auto
         wget -P /usr/local/bin/ https://dl.eff.org/certbot-auto
@@ -127,9 +144,13 @@ Assuming an Ubuntu server, configure as follows:
     - `travis encrypt-file --com --add .deploy.key && chmod 600 .deploy.key.enc`
 - Configure the firewall to allow only SSH and HTTP/HTTPS traffic
   - `ufw default deny incoming && ufw allow OpenSSH && ufw allow 'Nginx Full' && ufw enable`
+- Edit `/etc/nginx/mime.types` and add `application/manifest+json webmanifest`
 - Secure Nginx by modifying `/etc/nginx/nginx.conf`
   - Set `server_tokens off` under basic http settings to remove the Nginx version from headers
   - Set `keepalive_timeout 15`
+  - Set `gzip off`, `gzip_static on`, and `gzip_vary on`
+  - Set `brotli_static on`
+  - Add `charset utf-8` and `charset_types text/css application/javascript application/manifest+json`
   - Add the following lines to reduce maximum buffer sizes and timeouts
 
         ##
@@ -161,6 +182,7 @@ Assuming an Ubuntu server, configure as follows:
           text/html                  epoch;
           text/css                   max;
           application/javascript     max;
+          application/manifest+json  max;
           ~image/                    max;
         }
 
@@ -171,6 +193,8 @@ Assuming an Ubuntu server, configure as follows:
 
           server_name codehearts.com www.codehearts.com;
           error_page 401 403 404 /index.html;
+
+          add_header X-Content-Type-Options nosniff;
 
           location / {
             try_files $uri $uri/ =404;

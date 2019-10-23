@@ -16,7 +16,7 @@ layout: codehearts
     <nav>
       <ul>
         {% for link in bio.links %}
-        <li><a href="{{ link.link }}" class="button">{{ link.name }}</a></li>
+        <li><a href="{{ link.link | absolute_url }}" class="button">{{ link.name }}</a></li>
         {% endfor %}
       </ul>
     </nav>
