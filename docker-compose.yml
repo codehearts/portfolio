@@ -18,7 +18,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - ./_site:/usr/share/nginx/html:ro
+      - ./_site:/usr/share/nginx/html
   # Gotenberg receives requests on port 3000
   gotenberg:
     image: 'thecodingmachine/gotenberg:5.1.0'
