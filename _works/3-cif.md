@@ -1,8 +1,6 @@
 ---
 name: Computer Interest Floor
 time: November 2012 to August 2015
-link: https://cif.rochester.edu
-link_label: cif.rochester.edu
 image: img/cif.png
 image_alt: Screenshot of my CIF home page design
 ---
