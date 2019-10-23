@@ -1,0 +1,8 @@
+{
+  "name": "Codehearts",
+  "description": "codehearts is catherine hart",
+  "icons": [{
+    "src": "cache_bust(icons/apple-touch-icon.png)",
+    "sizes": "180x180"
+  }]
+}

@@ -6,7 +6,7 @@
   <title>{{ page.title }}</title>
 
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i%7CVarela+Round&display=swap" crossorigin="anonymous" rel="stylesheet">
-  <link rel="stylesheet" href="{{ site.url }}/css/pdf.css">
+  <link rel="stylesheet" href="{{ site.url }}/{{ "css/pdf.css" | cache_busting }}">
 </head>
 <body>
   {{ content }}

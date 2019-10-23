@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  background: $color_background url('/img/curly-heart.svg') 0 3.5rem repeat-x;
+  background: $color_background url('/cache_bust(img/curly-heart.svg)') 0 3.5rem repeat-x;
   background-size: 3rem;
   margin: 12rem 0 5rem;
   padding: 0;
@@ -77,8 +77,16 @@ figure {
 }
 
 img {
+  -webkit-border-image: url('/cache_bust(img/wave.svg)') 40 40 40 40 / 20px stretch;
+
+  // Workaround for WebKit browsers inheriting the border width of -webkit-border-image
+  @supports (border-image: url('/cache_bust(img/wave.svg)')) {
+    -webkit-border-image: url('/cache_bust(img/wave.svg)') 0 0 0 0 / 0px stretch;
+    border-image: url('/cache_bust(img/wave.svg)') 40 fill / 20px / 20px stretch;
+  }
+
   border-width: 1px;
-  border-image: url('/img/wave.svg') 40 fill / 20px / 20px stretch;
+  border-image: url('/cache_bust(img/wave.svg)') 40 fill / 20px / 20px stretch;
   max-width: 100%;
 }
 
