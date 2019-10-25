@@ -30,12 +30,12 @@ header {
 
         // First link is followed by a moon
         &:nth-child(1)::after {
-          background-image: url('/cache_bust(img/moon.svg)');
+          background-image: url('/cache_bust(img/sprite.svg)#moon');
         }
 
         // Second link is followed by a star
         &:nth-child(2)::after {
-          background-image: url('/cache_bust(img/star.svg)');
+          background-image: url('/cache_bust(img/sprite.svg)#star');
         }
       }
     }
