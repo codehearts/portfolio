@@ -11,7 +11,7 @@ section {
 
       // Lists use a heart as their bullet
       &::before {
-        background: center 75% / cover no-repeat url('/cache_bust(img/heart.svg)');
+        background: center 75% / cover no-repeat url('/cache_bust(img/sprite.svg)#heart');
         margin: -2.125em -1.5em -2.125em -3.5em;
         transform: scale(0.15);
         filter: brightness(10%);
