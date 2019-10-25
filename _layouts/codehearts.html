@@ -8,7 +8,10 @@
 
   <title>{{ page.title }}</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i%7CVarela+Round&display=swap" crossorigin="anonymous" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i%7CVarela+Round&display=swap" crossorigin="anonymous" as="style">
+  <link rel="preload" href="{{ site.url }}/{{ "css/codehearts.css" | cache_busting }}" as="style">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i%7CVarela+Round&display=swap" crossorigin="anonymous">
   <link rel="stylesheet" href="{{ site.url }}/{{ "css/codehearts.css" | cache_busting }}">
 
   <link rel="apple-touch-icon" href="{{ site.url }}/{{ "icons/apple-touch-icon.png" | cache_busting }}">
