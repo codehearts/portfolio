@@ -2,6 +2,7 @@ permalink: pretty
 exclude:
   - node_modules/
   - hint-report/
+  - meta/
   - docker-compose.yml
   - package-lock.json
   - package.json
