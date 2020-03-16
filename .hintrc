@@ -1,5 +1,4 @@
 {
-    "extends": ["all"],
     "connector": {
         "name": "jsdom"
     },
