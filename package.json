@@ -5,14 +5,14 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codehearts/codehearts.git"
+    "url": "git+https://github.com/codehearts/portfolio.git"
   },
   "author": "Catherine Hart",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codehearts/codehearts/issues"
+    "url": "https://github.com/codehearts/portfolio/issues"
   },
-  "homepage": "https://github.com/codehearts/codehearts#readme",
+  "homepage": "https://github.com/codehearts/portfolio#readme",
   "browserslist": [
     "> 0.5%",
     "last 2 versions",

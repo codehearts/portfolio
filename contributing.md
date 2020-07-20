@@ -54,7 +54,7 @@ Bios take a brief description and have the following front matter:
 Repositories take a super short description and have the following front matter:
 
 - `name` Human readable name, with apostrophes and spaces instead of dashes
-- `repo` GitHub repo with the username and repo name, like `codehearts/codehearts`
+- `repo` GitHub repo with the username and repo name, like `codehearts/portfolio`
 
 Repos are displayed in the sorted order of their filenames, so each file is prepended with a number to influence the sorting
 

@@ -1,6 +1,6 @@
 <h1 align="center">
-  <img src="https://raw.githubusercontent.com/codehearts/codehearts/master/meta/biopic.gif" width="270px" alt="portrait of the author" align="left">
-  <img src="https://raw.githubusercontent.com/codehearts/codehearts/master/meta/heading.png" width="436px" alt="codehearts is catherine hart">
+  <img src="https://raw.githubusercontent.com/codehearts/portfolio/master/meta/biopic.gif" width="270px" alt="portrait of the author" align="left">
+  <img src="https://raw.githubusercontent.com/codehearts/portfolio/master/meta/heading.png" width="436px" alt="codehearts is catherine hart">
 </h1>
 
 <p align="center">
@@ -8,12 +8,12 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.com/codehearts/codehearts"><img src="https://img.shields.io/travis/com/codehearts/codehearts/master?color=ff7aab" alt="Build Status"></a>
-  <a href="https://github.com/codehearts/codehearts/blob/master/license.md"><img src="https://img.shields.io/github/license/codehearts/codehearts?color=ff7aab" alt="MIT License"></a>
-  <a href="https://codehearts.com"><img src="https://img.shields.io/github/last-commit/codehearts/codehearts?color=ff7aab&label=last%20release" alt="Last Release"></a>
+  <a href="https://travis-ci.com/codehearts/portfolio"><img src="https://img.shields.io/travis/com/codehearts/portfolio/master?color=ff7aab" alt="Build Status"></a>
+  <a href="https://github.com/codehearts/portfolio/blob/master/license.md"><img src="https://img.shields.io/github/license/codehearts/portfolio?color=ff7aab" alt="MIT License"></a>
+  <a href="https://codehearts.com"><img src="https://img.shields.io/github/last-commit/codehearts/portfolio?color=ff7aab&label=last%20release" alt="Last Release"></a>
 <p>
 
 <p align="center">
-  <a href="https://github.com/codehearts/codehearts/blob/master/contributing.md">contributing</a> |
-  <a href="https://github.com/codehearts/codehearts/blob/master/setup.md">production setup</a>
+  <a href="https://github.com/codehearts/portfolio/blob/master/contributing.md">contributing</a> |
+  <a href="https://github.com/codehearts/portfolio/blob/master/setup.md">production setup</a>
 </p>
