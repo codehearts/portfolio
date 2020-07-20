@@ -4,10 +4,13 @@ image: img/katie.jpeg
 image_alt: Portrait of Catherine Hart
 links:
   - name: github
+    icon: github
     link: https://github.com/codehearts
   - name: twitter
+    icon: twitter
     link: https://twitter.com/codehearts
   - name: linkedin
+    icon: linkedin
     link: https://linkedin.com/in/codehearts
   - name: email
     link: mailto:%6B%61%74%69%65@%63%6F%64%65%68%65%61%72%74%73.%63%6F%6D

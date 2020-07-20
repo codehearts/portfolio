@@ -47,6 +47,7 @@ Bios take a brief description and have the following front matter:
 - `image_alt` Accessibility text for `image`
 - `links` Array of links with the following properties
   - `name` Name of the link, and label for the button
+  - `icon` Name of an icon to replace the text with from the SVG sprite
   - `link` URL for the link
 
 ## Repos

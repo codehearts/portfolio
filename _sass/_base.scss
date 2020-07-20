@@ -72,6 +72,41 @@ a {
   }
 }
 
+[data-icon] {
+  text-indent: -100vw;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background: no-repeat 50% calc(50% + 1px)/80%;
+    transition: filter 0.3s ease;
+    content: '';
+    filter: brightness(1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &:hover::before {
+    filter: brightness(10);
+  }
+}
+
+[data-icon='github']::before {
+  background-image: url('/cache_bust(img/sprite.svg)#github');
+}
+
+[data-icon='twitter']::before {
+  background-image: url('/cache_bust(img/sprite.svg)#twitter');
+}
+
+[data-icon='linkedin']::before {
+  background-image: url('/cache_bust(img/sprite.svg)#linkedin');
+}
+
 figure {
   margin: 0;
 }
