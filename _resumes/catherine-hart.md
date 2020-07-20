@@ -37,6 +37,7 @@ education:
     when: 2016
 technologies:
   experienced:
+    - Rust
     - Python
     - C
     - POSIX shells
@@ -45,13 +46,9 @@ technologies:
     - JavaScript
     - CSS (SASS)
     - PHP
-    - Ruby
     - Java
   interested:
-    - Rust
     - Swift
-    - Lua
-    - Go
 references:
   - name: Jeff Lamb
     relation: Genie Industries Design Engineering Manager

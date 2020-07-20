@@ -13,4 +13,4 @@ links:
     link: /catherine-hart-resume.pdf
 ---
 
-I'm Katie, a software developer at Accretive Technology Group with my B.S. in computer science from the University of Rochester. I love working with Linux, C, Python, and Docker; building things from Linux utilities to games to websites. Previously, I was an embedded systems developer at Genie Industries
+I'm Katie, a software developer at Accretive Technology Group with my B.S. in computer science from the University of Rochester. I love working with Linux, Rust, Python, and Docker; building things from Linux utilities to games to websites. Previously, I was an embedded systems developer at Genie Industries
