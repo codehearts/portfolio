@@ -20,7 +20,7 @@
     "not dead"
   ],
   "devDependencies": {
-    "@hint/configuration-all": "2.0.7",
+    "@hint/configuration-all": "2.0.8",
     "@hint/connector-jsdom": "4.1.6",
     "hint": "6.0.7"
   },
