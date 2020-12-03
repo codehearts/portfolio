@@ -22,7 +22,7 @@
   "devDependencies": {
     "@hint/configuration-all": "2.0.9",
     "@hint/connector-jsdom": "4.1.8",
-    "hint": "6.1.0"
+    "hint": "6.1.1"
   },
   "scripts": {
     "hint": "hint http://localhost && hint https://codehearts.com",
