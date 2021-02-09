@@ -21,7 +21,7 @@
   ],
   "devDependencies": {
     "@hint/configuration-all": "2.0.11",
-    "@hint/connector-jsdom": "4.1.8",
+    "@hint/connector-jsdom": "4.1.10",
     "hint": "6.1.1"
   },
   "scripts": {
