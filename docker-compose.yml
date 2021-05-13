@@ -3,7 +3,7 @@ version: '3.3'
 services:
   # Jekyll service for generating the static site
   jekyll:
-    image: 'jekyll/jekyll:3.8.6'
+    image: 'jekyll/jekyll:4.2.0'
     # JEKYLL_CMD can be set to change the run behavior (defaults to "build --watch")
     command: jekyll ${JEKYLL_CMD-build --watch}
     networks:
