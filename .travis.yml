@@ -18,6 +18,7 @@ before_install:
   - echo 'codehearts.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBDFZbgWZp5pnK4NwVxYB10GZw13wrTPwQ39Q7S3VTUyukXTATLfw9dHK5tumRTVnuxxIvDKuWFFzXuStD20Iq6c=' >> $HOME/.ssh/known_hosts
 
 before_script:
+  - mkdir .jekyll-cache
   - docker-compose pull --parallel
   - JEKYLL_CMD=build docker-compose up --exit-code-from jekyll
   - docker-compose up -d nginx
