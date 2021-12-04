@@ -12,7 +12,7 @@ services:
       - ./:/srv/jekyll
   # Nginx serves the static site on port 80, for Gotenberg and local developers
   nginx:
-    image: 'nginx:1.20.0'
+    image: 'nginx:1.21.4'
     networks:
       - jekyll_gotenberg
     ports:
