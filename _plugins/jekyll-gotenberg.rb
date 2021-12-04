@@ -17,17 +17,17 @@ def convert_html_to_pdf(item)
   web_port = web_config.fetch 'port', 4000
 
   # Establish the Gotenberg endpoint
-  endpoint = URI("http://#{gotenberg_host}:#{gotenberg_port}/convert/url")
+  endpoint = URI("http://#{gotenberg_host}:#{gotenberg_port}/forms/chromium/convert/url")
 
   # Create a request to the Gotenberg endpoint
   request = Net::HTTP::Post.new(endpoint)
   request.set_form({
-    'remoteURL' => "http://#{web_host}:#{web_port}#{item.url}",
+    'url' => "http://#{web_host}:#{web_port}#{item.url}",
     'marginTop' => '0',
     'marginBottom' => '0',
     'marginLeft' => '0',
     'marginRight' => '0',
-    'waitDelay' => '1'
+    'waitDelay' => '1s'
   }, 'multipart/form-data')
 
   # Connect to the Gotenberg endpoint
