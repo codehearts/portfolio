@@ -39,8 +39,7 @@ Assuming an Ubuntu server, configure as follows:
   - Create an SSH key for the deployment user on your local machine
     - `ssh-keygen -t rsa -f .deploy.key`
   - Append the contents of `.deploy.key.pub` on your local machine to `/home/deploy/.ssh/authorized_keys`
-  - Encrypt the private key on your local machine for Travis CI
-    - `travis encrypt-file --com --add .deploy.key && chmod 600 .deploy.key.enc`
+  - Create a secret named `DEPLOY_KEY` on GitHub with the contents of the private key
 - Configure the firewall to allow only SSH and HTTP/HTTPS traffic
   - `ufw default deny incoming && ufw allow OpenSSH && ufw allow 'Nginx Full' && ufw enable`
 - Edit `/etc/nginx/mime.types` and add `application/manifest+json webmanifest`

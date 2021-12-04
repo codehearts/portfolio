@@ -33,8 +33,7 @@ Deployment occurs automatically when the build for a commit on `master` succeeds
 - `icons/` Site icons, such as the favicon and Apple touch icon
   - `safari-pinned-tab.svg` Pinned tab icon for Safari, doubles as the favicons' source image
 - `docker-compose.yml` Local development and CI build environment
-- `.deploy.key.enc` Encrypted private key for server `deploy` user
-- `.travis.yml` Builds, verifies site integrity, and deploys `master` to production
+- `.github` Builds, verifies site integrity, and deploys `master` to production
 
 ## Bios
 

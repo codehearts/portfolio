@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.com/codehearts/portfolio"><img src="https://img.shields.io/travis/com/codehearts/portfolio/master?color=ff7aab" alt="Build Status"></a>
+  <a href="https://github.com/codehearts/portfolio/actions?query=workflow%3ABuild+branch%3Amaster"><img src="https://img.shields.io/github/workflow/status/codehearts/portfolio/Build/master?color=ff7aab" alt="Build Status"></a>
   <a href="https://github.com/codehearts/portfolio/blob/master/license.md"><img src="https://img.shields.io/github/license/codehearts/portfolio?color=ff7aab" alt="MIT License"></a>
   <a href="https://codehearts.com"><img src="https://img.shields.io/github/last-commit/codehearts/portfolio?color=ff7aab&label=last%20release" alt="Last Release"></a>
 <p>

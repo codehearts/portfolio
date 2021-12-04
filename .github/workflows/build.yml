@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: |
+        mkdir .jekyll-cache _site
+        docker-compose up --exit-code-from jekyll
+        docker-compose up -d nginx
+    env:
+      JEKYLL_CMD: build
