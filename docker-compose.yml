@@ -21,7 +21,7 @@ services:
       - ./_site:/usr/share/nginx/html
   # Gotenberg receives requests on port 3000
   gotenberg:
-    image: 'gotenberg/gotenberg:7.3.0'
+    image: 'gotenberg/gotenberg:7.3.1'
     environment:
       # Disable Open Office conversion
       DISABLE_UNOCONV: 1
