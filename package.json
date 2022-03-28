@@ -20,9 +20,9 @@
     "not dead"
   ],
   "devDependencies": {
-    "@hint/configuration-all": "2.0.17",
-    "@hint/connector-jsdom": "4.1.15",
-    "hint": "6.1.9"
+    "@hint/configuration-all": "2.0.18",
+    "@hint/connector-jsdom": "4.1.16",
+    "hint": "6.1.10"
   },
   "scripts": {
     "hint": "hint http://localhost && hint https://codehearts.com",

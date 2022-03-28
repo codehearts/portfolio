@@ -3,7 +3,7 @@ version: '3.3'
 services:
   # Jekyll service for generating the static site
   jekyll:
-    image: 'jekyll/jekyll:4.2.0'
+    image: 'jekyll/jekyll:4.2.2'
     # JEKYLL_CMD can be set to change the run behavior (defaults to "build --watch")
     command: jekyll ${JEKYLL_CMD-build --watch}
     networks:
@@ -21,7 +21,7 @@ services:
       - ./_site:/usr/share/nginx/html
   # Gotenberg receives requests on port 3000
   gotenberg:
-    image: 'gotenberg/gotenberg:7.5.0'
+    image: 'gotenberg/gotenberg:7.5.2'
     environment:
       # Disable Open Office conversion
       DISABLE_UNOCONV: 1
