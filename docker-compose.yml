@@ -12,7 +12,7 @@ services:
       - ./:/srv/jekyll
   # Nginx serves the static site on port 80, for Gotenberg and local developers
   nginx:
-    image: 'nginx:1.22.0'
+    image: 'nginx:1.23.0'
     networks:
       - jekyll_gotenberg
     ports:
@@ -21,7 +21,7 @@ services:
       - ./_site:/usr/share/nginx/html
   # Gotenberg receives requests on port 3000
   gotenberg:
-    image: 'gotenberg/gotenberg:7.5.2'
+    image: 'gotenberg/gotenberg:7.5.3'
     environment:
       # Disable Open Office conversion
       DISABLE_UNOCONV: 1
